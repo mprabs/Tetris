@@ -3,6 +3,12 @@ const context = canvas.getContext('2d');
 
 context.scale(20, 20);
 
+const player = {
+    pos: {x: 0, y: 0},
+    matrix: null,
+    score: 0,
+};
+
 function arenaSweep() {
     let rowCount = 1;
     outer: for (let y = arena.length -1; y > 0; --y) {
@@ -242,12 +248,6 @@ const colors = [
 ];
 
 const arena = createMatrix(12, 20);
-
-const player = {
-    pos: {x: 0, y: 0},
-    matrix: null,
-    score: 0,
-};
 
 playerReset();
 updateScore();
